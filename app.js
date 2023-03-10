@@ -13,23 +13,34 @@ function computerChoice() {
 }
 
 function checkWinner(playerChoice, computerChoice) {
+    let computerChoiceText = '';
+    switch (computerChoice) {
+        case 'rock':
+            computerChoiceText = 'Rock';
+            break;
+        case 'paper':
+            computerChoiceText = 'Paper';
+            break;
+        case 'scissors':
+            computerChoiceText = 'Scissors';
+            break;
+    }
     if (playerChoice === computerChoice) {
-        result.textContent = 'Tie!';
+        result.textContent = `Tie! Both chose ${computerChoiceText}.`;
     } else if (
         (playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')
     ) {
-        result.textContent = 'You win!';
+        result.textContent = `You win! ${computerChoiceText} loses to ${playerChoice}.`;
         playerScoreValue++;
         playerScore.textContent = playerScoreValue;
     } else {
-        result.textContent = 'You lose!';
+        result.textContent = `You lose! ${computerChoiceText} beats ${playerChoice}.`;
         computerScoreValue++;
         computerScore.textContent = computerScoreValue;
     }
 }
-
 function playerChoiceHandler(e) {
     const playerChoice = e.target.id;
     const computerChoiceValue = computerChoice();

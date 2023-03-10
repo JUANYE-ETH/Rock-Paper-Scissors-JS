@@ -40,6 +40,16 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
+.computer-choice {
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
 .result {
     margin-top: 50px;
     font-size: 24px;
